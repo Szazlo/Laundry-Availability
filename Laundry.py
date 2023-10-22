@@ -53,7 +53,7 @@ def get_machine_availability(machine_type):
         if data["Data"]["Available"]:
             availability.append(f"{machine_type} Available")
         else:
-            end = data["EstimatedCompletionTime"]
+            end = data["Data"]["EstimatedCompletionTime"]
             availability.append(f"{machine_type} unavailable. Completion time: {end}")
 
     return availability
