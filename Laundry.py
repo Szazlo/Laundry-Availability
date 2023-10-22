@@ -54,6 +54,7 @@ def get_machine_availability(machine_type):
             availability.append(f"{machine_type} Available")
         else:
             end = data["Data"]["EstimatedCompletionTime"]
+            end = str(int(end[11:13])+1) + ":" + end[14:16] + ":" + end[17:19]
             availability.append(f"{machine_type} unavailable. Completion time: {end}")
 
     return availability
